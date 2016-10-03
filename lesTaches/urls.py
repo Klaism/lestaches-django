@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^deleteTask/(?P<name>.+)$',views.deleteTask,name="delete_task"),
     url(r'^viewTask/(?P<name>.+)$',views.viewTask,name="view_task"),
     url(r'^list/?$',views.task_listing,name="task_list"),
+    url(r'^about/?$',views.about,name="about"),
 ]

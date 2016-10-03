@@ -7,6 +7,9 @@ from .forms import TaskForm
 
 # Create your views here.
 
+def about(request):
+    return render(request,'lesTaches/about.html')
+
 def home(request):
     objects = Task.objects.all().order_by('-createdDate')
     return render(request,'lesTaches/home.html', {"taches": objects })
