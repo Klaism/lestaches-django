@@ -1,3 +1,12 @@
-div.tacheCard > div.box-header > h4 > small{
+div.tacheCard > div.box-header > a > h4 > small{
     color: #FFF;
+}
+
+div.tacheCard > div.box-header > a > h4{
+    display: inline-block;
+}
+
+div.box-primary > div.box-header > a.box-header-link:hover {
+    color: rgb(93, 206, 255);
+    text-decoration: underline;
 }

@@ -1,8 +1,11 @@
 <div class="box box-solid box-primary tacheCard">
     <div class="box-header">
-        <h4>
-            {{tache.name}} <small>(du {{tache.createdDate}} )</small>
-        </h4>
+        <a class="box-header-link" href="{% url 'view_task' tache.name %}">
+            <h4>
+                {{tache.name}} <small>(du {{tache.createdDate}} )</small>
+            </h4>
+        </a>
+
     </div>
     <div class="box-body">
         {{tache.description}}
