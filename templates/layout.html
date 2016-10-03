@@ -64,9 +64,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <ul class="sidebar-menu">
                     <li class="header">TACHES</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Accueil</span></a></li>
-                    <li><a href="#"><i class="fa fa-link"></i> <span>Liste des taches</span></a></li>
-                    <li><a href="#"><i class="fa fa-link"></i> <span>Nouvelle tache</span></a></li>
+                    <li class="active"><a href="{% url 'home' %}"><i class="fa fa-link"></i> <span>Accueil</span></a></li>
+                    <li><a href="{% url 'task_list' %}"><i class="fa fa-link"></i> <span>Liste des taches</span></a></li>
+                    <li><a href="{% url 'new_task' %}"><i class="fa fa-link"></i> <span>Nouvelle tache</span></a></li>
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
