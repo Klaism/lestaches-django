@@ -41,7 +41,7 @@ def editTask(request,name):
 
     if request.method == 'POST':
 
-        form = TaskForm(request.POST)
+        form = TaskForm(request.POST,instance=task)
 
         if form.is_valid():
             form.save()
