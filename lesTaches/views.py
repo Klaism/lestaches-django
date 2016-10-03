@@ -20,6 +20,10 @@ def task_listing(request):
      objects = Task.objects.all().order_by('-createdDate')
      return render(request,'lesTaches/list.html', {"taches": objects })
 
+def viewTask(request, name):
+    task = Task.objects.get(name = name)
+    return render(request,'lesTaches/task.html',{"task":task})
+
 
 def newTask(request):
 
