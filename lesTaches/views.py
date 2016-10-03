@@ -35,6 +35,22 @@ def newTask(request):
         return render(request,'lesTaches/forms/task.html',{"form":form})
 
 
+def editTask(request,name):
+
+    task = Task.objects.get(name = name)
+
+    if request.method == 'POST':
+
+        form = TaskForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('task_list'))
+    else:
+        form = TaskForm(instance=task)
+        return render(request,'lesTaches/forms/task.html',{"form":form})
+
+
 def deleteTask(request, name):
     task = Task.objects.filter(name = name)
     task.delete()

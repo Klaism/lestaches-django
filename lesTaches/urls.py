@@ -20,6 +20,7 @@ from . import views
 urlpatterns = [
     url(r'^home/(\w)?$',views.home,name="home"),
     url(r'^newtask$',views.newTask,name="new_task"),
+    url(r'^editTask/(?P<name>.+)$',views.editTask,name="edit_task"),
     url(r'^deleteTask/(?P<name>.+)$',views.deleteTask,name="delete_task"),
     url(r'^$',views.task_listing,name="task_list"),
 ]
