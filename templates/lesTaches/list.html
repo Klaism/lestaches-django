@@ -2,18 +2,22 @@
 {% load static %}
 
 {% block content %}
-<h1>toto</h1>
-<a href="{% url 'new_task' %}">Nouvelle tache</a>
-{% for o in taches %}
-<p>
-    nom : {{o.name }}
-</p>
-<p>
-    date de création : {{ o.createdDate }}
-</p>
-<p>
-    description : {{ o.description }}
-</p>
-{% endfor %}
+
+<h1>
+    Liste des taches
+    <small>Voici toutes vos taches</small>
+</h1>
+
+<div class="row">
+
+    {% for tache in taches %}
+    <div class="col-xs-6 col-sm-4 col-md-3">
+
+        {% include "lesTaches/blocs/taskCard.html" with tache=tache %}
+
+    </div>
+    {% endfor %}
+
+</div>
 
 {% endblock %}
