@@ -30,7 +30,12 @@ def newTask(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('task_list'))
-
     else:
         form = TaskForm()
         return render(request,'lesTaches/forms/task.html',{"form":form})
+
+
+def deleteTask(request, name):
+    task = Task.objects.filter(name = name)
+    task.delete()
+    return HttpResponseRedirect(reverse('task_list'))
