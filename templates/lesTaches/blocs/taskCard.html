@@ -1,8 +1,8 @@
-<div class="box box-solid box-primary tacheCard">
+<div class="box box-solid box-{% if tache.closed %}danger{% else %}primary{% endif %} tacheCard">
     <div class="box-header">
         <a class="box-header-link" href="{% url 'view_task' tache.name %}">
             <h4>
-                {{tache.name}} <small>(du {{tache.createdDate}} )</small>
+                {{tache.name}} <small>( {% if tache.closed %}tache close{% else %}tache du {{tache.createdDate}}{% endif %} )</small>
             </h4>
         </a>
 
