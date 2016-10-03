@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title></title>
-</head>
-<body>
-    <p>
-        nom : {{task.name }}
-    </p>
-    <p>
-        date de création : {{ task.createdDate }}
-    </p>
-    <p>
-        description : {{ task.description }}
-    </p>
-</body>
-</html>
+{% extends "layout.html" %}
+{% block content %}
+<p>
+    nom : {{task.name }}
+</p>
+<p>
+    date de création : {{ task.createdDate }}
+</p>
+<p>
+    description : {{ task.description }}
+</p>
+{% endblock %}
