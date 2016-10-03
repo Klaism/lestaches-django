@@ -6,9 +6,13 @@
 </head>
 <body>
     <h1>toto</h1>
+    <a href="{% url 'new_task' %}">Nouvelle tache</a>
     {% for o in taches %}
     <p>
-        {{o.name }}
+        nom : {{o.name }}
+    </p>
+    <p>
+        date de création : {{ o.createdDate }}
     </p>
     {% endfor %}
 </body>

@@ -19,5 +19,6 @@ from . import views
 
 urlpatterns = [
     url(r'^home/(\w)?$',views.home,name="home"),
-    url(r'^$',views.task_listing,name="homeLesTaches"),
+    url(r'^newtask$',views.newTask,name="new_task"),
+    url(r'^$',views.task_listing,name="task_list"),
 ]
