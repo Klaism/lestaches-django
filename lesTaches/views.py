@@ -7,13 +7,9 @@ from .forms import TaskForm
 
 # Create your views here.
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
-
-def home(request,name):
-    if not name:
-        name = "toi"
-    return HttpResponse("Hello "+name)
+def home(request):
+    objects = Task.objects.all().order_by('-createdDate')
+    return render(request,'lesTaches/home.html', {"taches": objects })
 
 
 def task_listing(request):
