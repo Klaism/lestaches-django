@@ -6,8 +6,34 @@
     <div class="col-sm-12 col-md-7">
         <h1>Administration des taches <small>Vous avez ici un apercu gloable de vos taches</small></h1>
         <a class="btn btn-primary" href="{% url 'new_task' %}">Nouvelle tache</a>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info-box">
+                    <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Taches</span>
+                        <span class="info-box-number">{{total}}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="info-box">
+                    <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Taches ouvertes</span>
+                        <span class="info-box-number">{{taches|length}}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-sm-12 col-md-5">
+        <h1>Acces rapide aux taches ouvertes</h1>
+
         {% for tache in taches %}
         {% if tache.closed %}
         {% else %}

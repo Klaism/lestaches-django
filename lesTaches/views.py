@@ -11,8 +11,9 @@ def about(request):
     return render(request,'lesTaches/about.html')
 
 def home(request):
-    objects = Task.objects.all().order_by('-createdDate')
-    return render(request,'lesTaches/home.html', {"taches": objects })
+    taches = Task.objects.all().order_by('-createdDate')
+    allTaches = len(taches)
+    return render(request,'lesTaches/home.html', {"taches": taches.filter(closed=False), "total": allTaches })
 
 
 def task_listing(request):
