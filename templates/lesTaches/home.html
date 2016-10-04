@@ -2,19 +2,20 @@
 {% load static %}
 
 {% block content %}
-<h1>toto</h1>
-<a href="{% url 'new_task' %}">Nouvelle tache</a>
-{% for o in taches %}
-<p>
-    nom : {{o.name }}
-</p>
-<p>
-    date de création : {{ o.createdDate }}
-</p>
-<p>
-    description : {{ o.description }}
-</p>
-{% endfor %}
+<div class="row">
+    <div class="col-sm-12 col-md-7">
+        <h1>Administration des taches <small>Vous avez ici un apercu gloable de vos taches</small></h1>
+        <a class="btn btn-primary" href="{% url 'new_task' %}">Nouvelle tache</a>
+    </div>
+    <div class="col-sm-12 col-md-5">
+        {% for tache in taches %}
+        {% if tache.closed %}
+        {% else %}
+        {% include "lesTaches/blocs/taskCard.html" with tache=tache %}
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
 
