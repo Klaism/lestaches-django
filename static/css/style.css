@@ -10,3 +10,11 @@ div.box-primary > div.box-header > a.box-header-link:hover {
     color: rgb(93, 206, 255);
     text-decoration: underline;
 }
+
+.iconTrash{
+    color: rgb(219, 89, 89);
+    margin-right: 15px;
+}
+.iconPen{
+    color: rgb(85, 206, 227);
+}

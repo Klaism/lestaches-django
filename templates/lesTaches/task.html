@@ -1,12 +1,22 @@
 {% extends "layout.html" %}
 {% block content %}
+<h1>
+    Tache : {{task.name}} <small>( {% if task.closed %}tache close{% else %}tache du {{task.createdDate}}{% endif %} )</small>
+    <span class="pull-right">
+        <a href="{% url 'delete_task' task.name %}">
+            <i class="fa fa-2x fa-trash iconTrash" aria-hidden="true"></i>
+        </a>
+        <a href="{% url 'edit_task' task.name %}">
+            <i class="fa fa-2x fa-pencil iconPen" aria-hidden="true"></i>
+        </a>
+    </span>
+</h1>
+<h3>date de création :</h3>
 <p>
-    nom : {{task.name }}
+    {{ task.createdDate }}
 </p>
+<h3>description :</h3>
 <p>
-    date de création : {{ task.createdDate }}
-</p>
-<p>
-    description : {{ task.description }}
+    {{ task.description }}
 </p>
 {% endblock %}
