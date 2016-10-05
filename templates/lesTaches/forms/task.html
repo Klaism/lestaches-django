@@ -5,7 +5,7 @@
 
 {% load i18n widget_tweaks %}
 
-<form class="form-horizontal" role="form" action="." method="post">
+<form class="form-horizontal" role="form" action="" method="post">
     {% csrf_token %}
     {% for field in form %}
         {% if field.errors %}
