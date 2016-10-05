@@ -4,8 +4,12 @@ import time
 
 browser = webdriver.Chrome()
 
-browser.get('http://localhost:8000/lestaches/')
-assert 'Taches' in browser.title
+browser.get('http://localhost:8000/')
 
-time.sleep(3)
+time.sleep(1)
+
+assert 'lesTaches' in browser.title
+
+time.sleep(1)
+
 browser.quit()
